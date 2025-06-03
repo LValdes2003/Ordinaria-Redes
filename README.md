@@ -28,6 +28,7 @@ La capa de transporte se encarga de transmisión de datos entre aplicaciones.
 
 ### Pregunta 2
 - Describe el proceso completo de resolución de nombres en el Sistema de Nombres de Dominio (DNS), desde que un usuario ingresa una URL hasta que se establece la conexión con el servidor web.
+
 El usuario ingresa la URL, el rúter busca en su tabla si corresponde a una dirección IP. Si no, hace un request a su correspondiente servidor DNS. Si todavía no se encuentra, se busca por el domain (.com, .net, .es) y el servidor correspondiente manda la dirección IP. Esto se hace usando UDP para que sea un proceso mas rápido.
 
 - Compara el funcionamiento de HTTP y FTP, haciendo hincapié en:
@@ -42,9 +43,12 @@ El usuario ingresa la URL, el rúter busca en su tabla si corresponde a una dire
 
 ### Pregunta 3
 - calcula la tasa de transmisión máxima para un canal con un ancho de banda de 400 MHz y una relación señal a ruido de 15 dB. (Recuerda que para convertir de dB a escala lineal.
-1.993156857 GHz
+
+0,4 x log2(10^(15/10)) = 1,993156857 GHz
 
 - En un sistema en el que la primera portadora se sitúa a 1.2 GHz y cada canal ocupa 300 MHz, determina la frecuencia de la portadora inmediatamente anterior y la inmediatamente posterior. Explica la importancia de esta asignación para la eficiencia espectral.
+
+Con espacios de 300MHz, la portadora anterior es 1,2 - 0,3 = 0,9GHz y la posterior es 1,2 + 0,3 = 1,5GHz. Esta separación evita interferencia entre canales al coste de no tener eficiencia máxima.
 
 - Explica brevemente el funcionamiento del Algoritmo de Dijkstra para encontrar la ruta más corta en un grafo ponderado y compáralo con el método de enrutamiento por inundación (Flooding), señalando ventajas y desventajas de cada enfoque.
 
@@ -99,9 +103,11 @@ e x d - 1 = 20. d = 3.
 clave pública = (n, e). clave privada (n, d).
 
 - Explica qué es un firewall y menciona dos tipos (por ejemplo, filtrado de paquetes y firewall de estado), indicando cómo contribuyen a la protección de la red.
+
 Un firewall es un dispositivo que separa la red externa y la interna.
 Un firewall puede filtrar paquetes, observando sus IPs de fuente y destino, el protocolo, y números de puerto para decidir si pueden pasar. De esta manera, ciertos protocolos pueden ser prevenidos mientras que otros pueden pasar sin problema.
 Un firewall también puede observar los estados de redes conectadas. Una versión mas tradicional de firewall. Con esto, se pueden buscar anomalías y tomar acciones.
 
 - Menciona brevemente la función de VPN e IPSec en el aseguramiento de la comunicación.
+
 IPSec es un conjunto de protocolos para mantener seguridad en conexiones entre dispositivos que cifran paquetes y verifican sus fuentes. Estos protocolos hacen posibles los VPNs (Virtual Private Network). VPNs cifran la conexión entre dos redes, así que uno puede acceder a una red privada a través del internet. VPNs no necesitan usar IPSec, pero son los protocolos mas comunes en conjunto con VPN.
